@@ -1,0 +1,179 @@
+.title {
+    font-size: 3rem;
+    font-weight: 600;
+    color: transparent;
+    background-image: linear-gradient(to left, #227df9 0%, #7462f9 25%, #df3ef8 50%, #7462f9 75%, #227df9 100%);
+    display: inline-block;
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 25px;
+}
+
+/* CSS button  */
+.btnForm {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    box-shadow: inset 0 0 0 2px #1b1d1e;
+}
+
+.btn:hover {
+    color: #131314;
+    background: #7ccb91;
+}
+
+.btn:focus{
+    box-shadow: none;
+}
+
+button.btn-default {
+    color: #fff;
+    border-color: #f8f8f8;
+    background: #7ccb91;
+}
+
+button.btn,
+btn-default {
+    font-size: 12px;
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 12px 18px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    border-width: 2px;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 2px white;
+}
+
+btn:active,
+btn:visited {
+    cursor: pointer;
+    outline: none;
+}
+
+/* ANIMATION BUTTON  */
+button.btn::before,
+button.btn::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    content: "";
+    transition: 0.3s width ease;
+    background: #7ccb91;
+}
+
+button.btn::after {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+}
+
+button span::before,
+button span::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    content: "";
+    transition: 0.3s height ease;
+    background: #7ccb91;
+}
+
+button span::after {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+}
+
+button.btn:hover::before,
+button.btn:hover::after
+{
+    width: 0;
+}
+
+button.btn:hover span::before,
+button.btn:hover span::after{
+    height: 0;
+}
+
+.btn-update.btn:hover {
+    background-color: #3c99f0;
+}
+
+.btn-update.btn-default {
+    background-color: #3c99f0;
+}
+
+button.btn-update::before,
+button.btn-update::after {
+    background-color: #3c99f0;
+}
+
+button.btn-update span::before,
+button.btn-update span::after {
+    background-color: #3c99f0;
+}
+
+
+.btn-delete.btn:hover {
+    background-color: #F04F44;
+    font-size: 10px;
+    padding: 10px 14px;
+}
+
+.btn-delete.btn-default {
+    background-color: #F04F44;
+    font-size: 10px;
+    padding: 10px 14px;
+}
+
+button.btn-delete::before,
+button.btn-delete::after {
+    background-color: #F04F44;
+    font-size: 10px;
+}
+
+button.btn-delete span::before,
+button.btn-delete span::after {
+    background-color: #F04F44;
+    font-size: 10px;
+}
+
+.btn-edit.btn:hover {
+    background-color: #3c99f0;
+    font-size: 10px;
+    padding: 10px 14px;
+}
+
+.btn-edit.btn-default {
+    background-color: #3c99f0;
+    font-size: 10px;
+    padding: 10px 14px;
+}
+
+button.btn-edit::before,
+button.btn-edit::after {
+    background-color: #3c99f0;
+    font-size: 10px;
+}
+
+button.btn-edit span::before,
+button.btn-edit span::after {
+    background-color: #3c99f0;
+    font-size: 10px;
+}
