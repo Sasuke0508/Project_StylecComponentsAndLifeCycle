@@ -11,12 +11,7 @@ import {
 class RegisterForm extends Component {
   state = {
     values: {
-      account: this.props.userUpdate.account,
-      fullName: this.props.userUpdate.fullName,
-      password: this.props.userUpdate.password,
-      phone: this.props.userUpdate.phone,
-      email: this.props.userUpdate.email,
-      typeOfAccount: this.props.userUpdate.typeOfAccount,
+      ...this.props.userUpdate,
     },
     error: {
       account: "",
@@ -88,15 +83,11 @@ class RegisterForm extends Component {
       let dataUser = this.state.values;
       // Tạo 1 Object
       let newUser = {
+        ...dataUser,
         id: this.props.listUser.length + 1,
-        account: dataUser.account,
-        fullName: dataUser.fullName,
-        phone: dataUser.phone,
-        email: dataUser.email,
-        password: dataUser.password,
-        typeOfAccount: dataUser.typeOfAccount,
       };
       this.props.dispatch(addNewUserAction(newUser));
+      this.setState({values: {...this.props.userUpdate}})
 
       Swal.fire({
         title: "Register success",
@@ -144,13 +135,8 @@ class RegisterForm extends Component {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
           let dataUser = {
+            ...this.state.values,
             id: this.props.userUpdate.id,
-            account: this.state.values.account,
-            fullName: this.state.values.fullName,
-            phone: this.state.values.phone,
-            email: this.state.values.email,
-            password: this.state.values.password,
-            typeOfAccount: this.state.values.typeOfAccount,
           };
           // console.log('Data đưa lên: ', dataUser);
           this.props.dispatch(updateUserAction(dataUser));
@@ -168,8 +154,8 @@ class RegisterForm extends Component {
     }
   };
 
-//   Component này chạy sau khi render nhưng lại lấy props và state trước khi render,
-//   khi sử dụng phải để ý để tránh lặp vô hạn 
+  //   Component này chạy sau khi render nhưng lại lấy props và state trước khi render,
+  //   khi sử dụng phải để ý để tránh lặp vô hạn
 
   componentDidUpdate(prevProps, prevState) {
     // Để tránh lặp vô tận, so sánh nếu như props trước đó mà userUpdate trước
@@ -177,12 +163,7 @@ class RegisterForm extends Component {
     if (prevProps.userUpdate.id !== this.props.userUpdate.id) {
       this.setState({
         values: {
-          account: this.props.userUpdate.account,
-          fullName: this.props.userUpdate.fullName,
-          password: this.props.userUpdate.password,
-          phone: this.props.userUpdate.phone,
-          email: this.props.userUpdate.email,
-          typeOfAccount: this.props.userUpdate.typeOfAccount,
+          ...this.props.userUpdate,
         },
       });
     }
