@@ -84,7 +84,7 @@ class RegisterForm extends Component {
       // Tạo 1 Object
       let newUser = {
         ...dataUser,
-        id: this.props.listUser.length + 1,
+        id: Date.now(),
       };
       this.props.dispatch(addNewUserAction(newUser));
       this.setState({values: {...this.props.userUpdate}})
